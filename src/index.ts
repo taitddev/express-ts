@@ -9,6 +9,7 @@ import mongoose from "mongoose";
 
 // Routes
 import authRoutes from "./routes/auth";
+import userRouters from "./routes/users";
 
 config();
 
@@ -32,6 +33,7 @@ app.get("/", async (req, res) => {
   });
 });
 app.use("/auth", authRoutes);
+app.use("/users", userRouters);
 
 const server = http.createServer(app);
 
